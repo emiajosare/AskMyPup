@@ -2,7 +2,8 @@ import React, { useState, useRef } from 'react';
 import { 
   ArrowRight, 
   CheckCircle2, 
-  PawPrint, 
+  PawPrint,
+  Menu, 
   X, 
   MessageSquare, 
   Activity, 
@@ -20,6 +21,7 @@ function App() {
   const [firstName, setFirstName] = useState('');
   const [isRegistered, setIsRegistered] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const waitlistRef = useRef<HTMLDivElement>(null);
   const firstNameRef = useRef<HTMLInputElement>(null);
@@ -32,7 +34,24 @@ function App() {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      // Cerramos el menú primero para liberar la pantalla
+      setIsMenuOpen(false);
+      
+      // Añadimos un pequeño delay para que la animación de cierre no interfiera
+      setTimeout(() => {
+        const offset = 80; // Altura de tu header sticky
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -97,10 +116,10 @@ function App() {
               className="md:hidden bg-white border-b border-black/5 overflow-hidden"
             >
               <div className="flex flex-col p-6 gap-4 font-bold uppercase tracking-widest text-sm text-gray-500">
-                <button onClick={() => { scrollToSection('how-it-works'); setIsMenuOpen(false); }} className="text-left py-2 hover:text-orange-600">How It Works</button>
-                <button onClick={() => { scrollToSection('why-join'); setIsMenuOpen(false); }} className="text-left py-2 hover:text-orange-600">Why Join Early</button>
-                <button onClick={() => { scrollToSection('faq'); setIsMenuOpen(false); }} className="text-left py-2 hover:text-orange-600">FAQ</button>
-                <button onClick={() => { scrollToWaitlist(); setIsMenuOpen(false); }} className="bg-[#1a1a1a] text-white p-4 rounded-xl text-center mt-2">Join the Waitlist</button>
+                <button onClick={() => scrollToSection('how-it-works')} className="text-left py-4 border-b border-gray-50">How It Works</button>
+                <button onClick={() => scrollToSection('why-join')} className="text-left py-4 border-b border-gray-50">Why Join Early</button>
+                <button onClick={() => scrollToSection('faq')} className="text-left py-4 border-b border-gray-50">FAQ</button>
+                <button onClick={() => scrollToWaitlist()} className="bg-[#1a1a1a] text-white p-5 rounded-2xl text-center mt-4">Join the Waitlist</button>
               </div>
             </motion.div>
           )}
