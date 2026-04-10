@@ -61,13 +61,15 @@ function App() {
   return (
     <div className="min-h-screen bg-[#faf9f6] text-[#1a1a1a] font-sans selection:bg-orange-100 antialiased">
       
-      {/* 1. Top Header / Navbar */}
+      {/* 1. Top Header / Navbar con Menú Móvil */}
       <nav className="sticky top-0 z-50 bg-[#faf9f6]/80 backdrop-blur-md border-b border-black/5">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 flex justify-between items-center h-20">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <div className="bg-orange-500 p-1.5 rounded-lg"><PawPrint className="w-5 h-5 text-white" /></div>
             <span className="text-xl font-black tracking-tighter">AskMyPup</span>
           </div>
+
+          {/* Escritorio */}
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('how-it-works')} className="text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-widest transition-colors">How It Works</button>
             <button onClick={() => scrollToSection('why-join')} className="text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-widest transition-colors">Why Join Early</button>
@@ -76,7 +78,33 @@ function App() {
               Join the Waitlist
             </button>
           </div>
+
+          {/* Botón Móvil */}
+          <div className="md:hidden">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 text-gray-600">
+              {isMenuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
+
+        {/* Menú Desplegable Móvil */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-white border-b border-black/5 overflow-hidden"
+            >
+              <div className="flex flex-col p-6 gap-4 font-bold uppercase tracking-widest text-sm text-gray-500">
+                <button onClick={() => { scrollToSection('how-it-works'); setIsMenuOpen(false); }} className="text-left py-2 hover:text-orange-600">How It Works</button>
+                <button onClick={() => { scrollToSection('why-join'); setIsMenuOpen(false); }} className="text-left py-2 hover:text-orange-600">Why Join Early</button>
+                <button onClick={() => { scrollToSection('faq'); setIsMenuOpen(false); }} className="text-left py-2 hover:text-orange-600">FAQ</button>
+                <button onClick={() => { scrollToWaitlist(); setIsMenuOpen(false); }} className="bg-[#1a1a1a] text-white p-4 rounded-xl text-center mt-2">Join the Waitlist</button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* 2. Hero Section */}
