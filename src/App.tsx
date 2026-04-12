@@ -130,16 +130,16 @@ function App() {
       <section className="pt-16 pb-20 lg:pt-32 lg:pb-40 overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div className="max-w-[620px]">
-            <span className="text-sm font-black text-orange-600 uppercase tracking-[0.2em] mb-4 block">Itching. Licking. Scratching.</span>
-            <h1 className="text-5xl lg:text-7xl font-black leading-[0.95] mb-8 tracking-tighter">Your dog can’t tell you why they itch.</h1>
+            <span className="text-sm font-black text-orange-600 uppercase tracking-[0.2em] mb-4 block">Clear answers for your dog’s problems.</span>
+            <h1 className="text-5xl lg:text-7xl font-black leading-[0.95] mb-8 tracking-tighter">Stop guessing what’s wrong with your dog..</h1>
             <p className="text-xl lg:text-2xl text-gray-500 mb-10 leading-relaxed font-medium">
-              AskMyPup is building a simpler way to spot hidden ingredient triggers in dog food labels — so dog owners can stop guessing and start understanding what may be causing the irritation.
+              From itching and food issues to behaviour problems, AskMyPup helps you understand what’s going on—and what to do next.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <button onClick={() => scrollToWaitlist()} className="bg-[#1a1a1a] text-white px-8 py-5 rounded-2xl text-lg font-black hover:bg-orange-600 transition-all shadow-xl shadow-black/10">Join the Waitlist</button>
+              <button onClick={() => scrollToWaitlist()} className="bg-[#1a1a1a] text-white px-8 py-5 rounded-2xl text-lg font-black hover:bg-orange-600 transition-all shadow-xl shadow-black/10">Get early access</button>
               <button onClick={() => scrollToSection('how-it-works')} className="text-gray-500 px-8 py-5 rounded-2xl text-lg font-bold hover:bg-black/5 transition-all">See How It Will Work</button>
             </div>
-            <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Be among the first to check your dog’s ingredients when AskMyPup launches.</p>
+            <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Built for real dog owners dealing with real problems.</p>
           </div>
           <div className="mt-16 lg:mt-0 relative">
             <img src="/itchy-dog.png" className="rounded-[3rem] shadow-2xl grayscale-[20%]" alt="Dog scratching" />
@@ -160,34 +160,48 @@ function App() {
       {/* 3. Trust Strip */}
       <div className="py-8 border-y border-black/5 bg-white text-center">
         <p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] px-4">
-          Built for dog owners looking for clearer answers before the next vet visit.
+          Helping dog owners make better decisions—without endless searching or confusion.
         </p>
       </div>
 
       {/* 4. Problem Bridge */}
       <section className="py-24 lg:py-32 bg-white text-center">
         <div className="max-w-[760px] mx-auto px-5">
-          <h2 className="text-3xl lg:text-5xl font-black mb-8 italic text-gray-900">It may not be random.</h2>
+          <h2 className="text-3xl lg:text-5xl font-black mb-8 italic text-gray-900">Dog advice shouldn’t be this confusing.</h2>
           <div className="space-y-6 text-xl lg:text-2xl text-gray-500 font-medium leading-relaxed">
-            <p>When dogs keep itching, licking their paws, or scratching their ears, many owners assume it is just allergies.</p>
-            <p className="text-gray-900 font-black italic underline decoration-orange-500 decoration-4 underline-offset-8">But sometimes the food bowl is part of the story.</p>
+            <p>Every search gives a different answer.  
+                You don’t know what advice to trust.  
+                And small issues can turn into bigger problems fast.</p>
+            <p className="text-gray-900 font-black italic underline decoration-orange-500 decoration-4 underline-offset-8 highlight">You shouldn’t have to guess what’s going on with your dog.</p>
             <p>Some ingredient triggers are obvious. Others are buried in labels most owners were never taught how to read.</p>
           </div>
-          <p className="mt-12 text-2xl font-black text-gray-900">AskMyPup is being built to make those hidden clues easier to spot.</p>
+          <p className="mt-12 text-2xl font-black text-gray-900">AskMyPup is built to give you clear, simple guidance—so you can take the right next step with confidence.</p>
         </div>
       </section>
 
       {/* 5. Trigger Cards */}
       <section className="py-24 lg:py-32 bg-[#faf9f6]">
         <div className="max-w-[1200px] mx-auto px-5 text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-black mb-6 tracking-tight">You might be feeding the cause without realizing it.</h2>
-          <p className="text-xl text-gray-500 font-medium">Many dog owners do not notice possible food triggers until symptoms keep coming back.</p>
+          <h2 className="text-3xl lg:text-5xl font-black mb-6 tracking-tight">What you can uncover with AskMyPup</h2>
+          <p className="text-xl text-gray-500 font-medium">Spot patterns, triggers, and possible causes you might otherwise miss.</p>
         </div>
         <div className="max-w-[1200px] mx-auto px-5 grid md:grid-cols-3 gap-8">
           {[
-            { label: "Common trigger", title: "Chicken-based proteins", body: "Some dogs may react to proteins that appear in foods they eat every day." },
-            { label: "Often missed", title: "Artificial preservatives", body: "Additives and preservatives can be easy to overlook on a crowded label." },
-            { label: "Hidden in plain sight", title: "Fillers and additives", body: "Certain ingredients may contribute to irritation or digestive discomfort in sensitive dogs." }
+            {
+              label: "Food insight",
+              title: "Ingredient triggers",
+              body: "Identify ingredients that may be linked to itching, irritation, or sensitivity."
+            },
+            {
+              label: "Hidden patterns",
+              title: "What’s often overlooked",
+              body: "Catch additives and ingredients that are easy to miss on labels."
+            },
+            {
+              label: "Better decisions",
+              title: "Know what to change",
+              body: "Make more informed choices about food, habits, and next steps."
+            }
           ].map((card, i) => (
             <div key={i} className="bg-white p-8 rounded-[2rem] border border-black/5 shadow-premium">
               <span className="text-xs font-black text-orange-600 uppercase tracking-widest mb-4 block">{card.label}</span>
@@ -201,14 +215,23 @@ function App() {
       {/* 6. Why Join Early Section (ID: why-join) */}
       <section id="why-join" className="py-24 lg:py-32 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-black mb-6 tracking-tight">Why join early</h2>
-          <p className="text-xl text-gray-500 font-medium">Early access members will be the first to try AskMyPup and help shape how it works for real dog owners.</p>
+          <h2 className="text-4xl lg:text-6xl font-black mb-6 tracking-tight">Get early access</h2>
+          <p className="text-xl text-gray-500 font-medium">Be among the first to try AskMyPup and start understanding your dog’s issues faster.</p>
         </div>
         <div className="max-w-[1200px] mx-auto px-5 grid md:grid-cols-3 gap-8">
           {[
-            { title: "Get first access", body: "Be among the first dog owners to try ingredient checking when AskMyPup launches." },
-            { title: "Help shape the product", body: "Your feedback can influence which features matter most." },
-            { title: "Stay informed", body: "Get launch updates, early invites, and product news." }
+            {
+              title: "Try it first",
+              body: "Be among the first dog owners to use AskMyPup."
+            },
+            {
+              title: "Shape the product",
+              body: "Your feedback helps improve how it works."
+            },
+            {
+              title: "Stay ahead",
+              body: "Get updates, early access, and new features first."
+            }
           ].map((item, i) => (
             <div key={i} className="bg-gray-50 p-10 rounded-[2.5rem] border border-black/5 hover:bg-white transition-all">
               <h3 className="text-2xl font-black mb-4 tracking-tight">{item.title}</h3>
@@ -218,6 +241,22 @@ function App() {
         </div>
       </section>
 
+      <section className="py-24 bg-white text-center">
+        <div className="max-w-[900px] mx-auto px-5">
+          <h2 className="text-4xl lg:text-5xl font-black mb-10">
+            Ask anything about your dog
+          </h2>
+
+          <div className="space-y-6 text-xl text-gray-600 font-medium">
+            <p>“Why is my dog itching all the time?”</p>
+            <p>“Is this food causing a reaction?”</p>
+            <p>“What ingredients should I avoid?”</p>
+            <p>“How do I fix this behaviour?”</p>
+          </div>
+        </div>
+      </section>
+
+
       {/* 8. How It Will Work */}
       <section id="how-it-works" className="py-24 lg:py-32 bg-[#1a1a1a] text-white">
         <div className="max-w-[1200px] mx-auto px-5 text-center mb-24">
@@ -225,10 +264,26 @@ function App() {
         </div>
         <div className="max-w-[1200px] mx-auto px-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {[
-            { step: "1", title: "Take a picture", body: "Snap your dog food label or upload an image." },
-            { step: "2", title: "We scan the ingredients", body: "AskMyPup will read the label and look for possible triggers." },
-            { step: "3", title: "See flagged ingredients", body: "Get a simple breakdown of what may be worth attention." },
-            { step: "4", title: "Make a better next move", body: "Use that insight when choosing food or talking with your vet." }
+            {
+              step: "1",
+              title: "Take a picture",
+              body: "Snap your dog food label or upload an image."
+            },
+            {
+              step: "2",
+              title: "We analyze it",
+              body: "AskMyPup scans ingredients and looks for possible triggers."
+            },
+            {
+              step: "3",
+              title: "Get clear insights",
+              body: "See what may be causing the issue and why."
+            },
+            {
+              step: "4",
+              title: "Take action",
+              body: "Make better decisions for your dog with confidence."
+            }
           ].map((item, i) => (
             <div key={i} className="text-center group">
               <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center text-3xl font-black mx-auto mb-8 group-hover:scale-110 transition-transform">
@@ -252,8 +307,8 @@ function App() {
           <div className="bg-white rounded-[4rem] p-12 lg:p-24 shadow-2xl border border-black/5 text-center">
             {!isRegistered ? (
               <>
-                <h2 className="text-4xl lg:text-6xl font-black mb-6 tracking-tighter text-gray-900">Be first to check your dog’s ingredients.</h2>
-                <p className="text-xl text-gray-500 mb-12 font-medium">Join the AskMyPup waitlist for early access and launch updates.</p>
+                <h2 className="text-4xl lg:text-6xl font-black mb-6 tracking-tighter text-gray-900">Be first to understand what’s really going on with your dog.</h2>
+                <p className="text-xl text-gray-500 mb-12 font-medium">Join the AskMyPup waitlist and get early access when we launch.</p>
                 <form onSubmit={handleSubmit} className="space-y-6 text-left">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -272,10 +327,10 @@ function App() {
                     </div>
                   </div>
                   <button type="submit" disabled={isLoading} className="w-full bg-[#1a1a1a] text-white py-6 rounded-2xl text-xl font-black hover:bg-orange-600 transition-all shadow-xl shadow-black/20 flex items-center justify-center gap-4 active:scale-[0.98]">
-                    {isLoading ? "Joining..." : "Join the Waitlist"} <ArrowRight className="w-6 h-6" />
+                    {isLoading ? "Joining..." : "Join the waitlist → Get early access"} <ArrowRight className="w-6 h-6" />
                   </button>
                 </form>
-                <p className="mt-8 text-sm font-medium text-gray-400">We’ll only use your information for AskMyPup updates and early access.</p>
+                <p className="mt-8 text-sm font-medium text-gray-400">We’ll only send updates about AskMyPup. No spam.</p>
               </>
             ) : (
               <motion.div initial={{opacity:0, scale:0.9}} animate={{opacity:1, scale:1}} className="py-20">
@@ -290,8 +345,8 @@ function App() {
 
       {/* 11. Contact Section */}
       <section className="py-24 bg-white text-center border-t border-black/5">
-        <h3 className="text-2xl font-black mb-4 tracking-tighter">Want to talk with us?</h3>
-        <p className="text-lg text-gray-500 font-medium mb-6 px-4">Have feedback, questions, or want to share your dog’s food sensitivity story? We’d love to hear from you.</p>
+        <h3 className="text-2xl font-black mb-4 tracking-tighter">Have questions or feedback?</h3>
+        <p className="text-lg text-gray-500 font-medium mb-6 px-4">We’d love to hear from you—especially if your dog has ongoing issues you're trying to solve.</p>
         <a href="mailto:administration@askmypup.com" className="text-2xl font-black text-orange-600 hover:text-orange-700 decoration-2 underline">administration@askmypup.com</a>
       </section>
 
@@ -331,6 +386,19 @@ function App() {
         </div>
       </section>
 
+       <section className="py-24 bg-[#1a1a1a] text-white text-center">
+        <h2 className="text-4xl font-black mb-6">
+          Stop guessing. Start understanding your dog.
+        </h2>
+         <button onClick={() => scrollToWaitlist()} className="bg-orange-500 text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-orange-400 transition-all">
+              Get early access
+            </button>   
+        
+        <p className="mt-6 text-gray-400">
+          Takes seconds to join. No commitment.
+        </p>
+      </section>
+
       {/* 14. Footer */}
        <footer className="bg-[#1a1a1a] text-white py-20 px-4">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-10 text-center">
@@ -343,6 +411,8 @@ function App() {
           <p className="text-gray-500 font-medium">© 2024 AskMyPup. Helping dogs feel better, one question at a time.</p>
         </div>
       </footer>
+
+     
 
       {/* MODALS SISTEMA (IGUAL AL ANTERIOR) */}
       <AnimatePresence>
