@@ -133,11 +133,11 @@ function App() {
             <span className="text-sm font-black text-orange-600 uppercase tracking-[0.2em] mb-4 block">Clear answers for your dog’s problems.</span>
             <h1 className="text-5xl lg:text-7xl font-black leading-[0.95] mb-8 tracking-tighter">Stop guessing what’s wrong with your dog..</h1>
             <p className="text-xl lg:text-2xl text-gray-500 mb-10 leading-relaxed font-medium">
-              From itching and food issues to behaviour problems, AskMyPup helps you understand what’s going on—and what to do next.
+              Scan your dog’s food and spot hidden ingredients that may be causing irritation. AskMyPup helps you understand what’s going on—and what to do next.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <button onClick={() => scrollToWaitlist()} className="bg-[#1a1a1a] text-white px-8 py-5 rounded-2xl text-lg font-black hover:bg-orange-600 transition-all shadow-xl shadow-black/10">Get early access</button>
-              <button onClick={() => scrollToSection('how-it-works')} className="text-gray-500 px-8 py-5 rounded-2xl text-lg font-bold hover:bg-black/5 transition-all">See How It Will Work</button>
+              <button onClick={() => scrollToWaitlist()} className="bg-[#1a1a1a] text-white px-8 py-5 rounded-2xl text-lg font-black hover:bg-orange-600 transition-all shadow-xl shadow-black/10">Join the waitlist</button>
+              <button onClick={() => scrollToSection('how-it-works')} className="text-gray-500 px-8 py-5 rounded-2xl text-lg font-bold hover:bg-black/5 transition-all">See How It Works</button>
             </div>
             <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Built for real dog owners dealing with real problems.</p>
           </div>
@@ -218,30 +218,47 @@ function App() {
           <h2 className="text-4xl lg:text-6xl font-black mb-6 tracking-tight">Get early access</h2>
           <p className="text-xl text-gray-500 font-medium">Be among the first to try AskMyPup and start understanding your dog’s issues faster.</p>
         </div>
-        <div className="max-w-[1200px] mx-auto px-5 grid md:grid-cols-3 gap-8">
+        <div className="max-w-[1200px] mx-auto px-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
           {[
             {
-              title: "Try it first",
-              body: "Be among the first dog owners to use AskMyPup."
+              //title: "Try it first",
+              body: "Spot possible food triggers in seconds."
             },
             {
-              title: "Shape the product",
-              body: "Your feedback helps improve how it works."
+              //title: "Shape the product",
+              body: "Stop guessing what’s causing irritation."
             },
             {
-              title: "Stay ahead",
-              body: "Get updates, early access, and new features first."
+              //title: "Stay ahead",
+              body: "Make better food choices with confidence."
+            },
+            {
+              //title: "Stay ahead",
+              body: "Be first to try the tool before launch."
             }
           ].map((item, i) => (
-            <div key={i} className="bg-gray-50 p-10 rounded-[2.5rem] border border-black/5 hover:bg-white transition-all">
+            <div key={i} className="bg-gray-50 p-6 rounded-3xl border border-black/5 hover:bg-white transition-all">
               <h3 className="text-2xl font-black mb-4 tracking-tight">{item.title}</h3>
               <p className="text-gray-500 font-medium leading-relaxed text-lg">{item.body}</p>
             </div>
           ))}
         </div>
+        <div className="mt-20 text-center">
+          <button onClick={() => scrollToWaitlist()} className="text-xl font-black text-orange-500 uppercase tracking-widest hover:tracking-[0.2em] transition-all flex items-center justify-center mx-auto gap-4">
+            Join the Waitlist <ArrowRight className="w-6 h-6" />
+          </button>
+        </div>
       </section>
+      {/* 4. Trust Strip */}
+      <div className="py-8 border-y border-black/5 bg-white text-center">
+        <p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] px-4">
+          Designed to help dog owners make more informed decisions.
+        </p>
+      </div>
 
-      <section className="py-24 bg-white text-center">
+      
+
+      {/*<section className="py-24 bg-white text-center">
         <div className="max-w-[900px] mx-auto px-5">
           <h2 className="text-4xl lg:text-5xl font-black mb-10">
             Ask anything about your dog
@@ -254,7 +271,7 @@ function App() {
             <p>“How do I fix this behaviour?”</p>
           </div>
         </div>
-      </section>
+      </section>*/}
 
 
       {/* 8. How It Will Work */}
